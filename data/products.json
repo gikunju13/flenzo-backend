@@ -1,0 +1,23 @@
+[
+  {
+    "id": 1,
+    "name": "Flenzo Street Tee",
+    "price": 45,
+    "image": "images/shirt1.jpg",
+    "description": "Premium cotton streetwear tee designed for comfort and urban style."
+  },
+  {
+    "id": 2,
+    "name": "Flenzo Oversized Hoodie",
+    "price": 80,
+    "image": "images/hoodie1.jpg",
+    "description": "Heavyweight hoodie with minimalist luxury streetwear design."
+  },
+  {
+    "id": 3,
+    "name": "Flenzo Urban Jacket",
+    "price": 120,
+    "image": "images/jacket1.jpg",
+    "description": "Modern luxury jacket for street and casual wear."
+  }
+]
