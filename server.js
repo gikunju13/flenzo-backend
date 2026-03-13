@@ -1,16 +1,15 @@
 // server.js
 const express = require('express');
 const cors = require('cors');
-const app = express();
+const fs = require('fs');
 
-//Preparing Backend
-const PORT = process.env.PORT || 5000;
-app.listen(PORT, () => {
-  console.log(`Server running on http://localhost:${PORT}`);
-});
+const app = express();
 
 app.use(cors());
 app.use(express.json());
+
+//Preparing Backend
+const PORT = process.env.PORT || 5000;
 
 // Test route
 app.get('/', (req, res) => {
@@ -18,8 +17,6 @@ app.get('/', (req, res) => {
 });
 
 // Product route
-const fs = require('fs');
-
 app.get('/products', (req, res) => {
 
   fs.readFile('./data/products.json', 'utf8', (err, data) => {
@@ -34,6 +31,7 @@ app.get('/products', (req, res) => {
 
 });
 
+// Product by ID route
 app.get('/products/:id', (req, res) => {
 
   const productId = parseInt(req.params.id);
@@ -58,6 +56,7 @@ app.get('/products/:id', (req, res) => {
 
 });
 
+// Start the server
 app.listen(PORT, () => {
   console.log(`Server running on http://localhost:${PORT}`);
 });
