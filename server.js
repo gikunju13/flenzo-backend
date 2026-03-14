@@ -5,7 +5,13 @@ const fs = require('fs');
 
 const app = express();
 
-app.use(cors());
+// Allow restricting CORS via FRONTEND_ORIGIN env var in production (e.g. Netlify URL).
+const FRONTEND_ORIGIN = process.env.FRONTEND_ORIGIN || null;
+if(FRONTEND_ORIGIN){
+  app.use(cors({ origin: FRONTEND_ORIGIN }));
+} else {
+  app.use(cors());
+}
 app.use(express.json());
 
 //Preparing Backend
